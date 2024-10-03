@@ -1,6 +1,6 @@
 <?php
 
-//Create and implement database connection class
+// Create and implement database connection class
 class Database {
     private $host = 'localhost';
     private $dbName = 'newdb';
@@ -23,7 +23,7 @@ class Database {
 $dbClass = new Database();
 $conn = $dbClass->connect();
 
-//Implement image download and save functionality with directory check
+// Implement image download and save functionality with directory check
 $imageUrl = "https://cdn2.vectorstock.com/i/1000x1000/23/81/default-avatar-profile-icon-vector-18942381.jpg";
 $saveTo = "images/default-avatar-profile.jpg";
 
@@ -45,7 +45,7 @@ if (!file_exists($saveTo)) {
 
 $currentMonth = date('m');
 
-//Retrieve and display users with birthdays this month and their recent posts
+// Retrieve and display users with birthdays this month and their recent posts
 $query = "
     SELECT 
         users.id AS user_id, 
@@ -85,7 +85,7 @@ foreach ($results as $result) {
 }
 
 
-//Create and display post count report by hour and date
+// Create and display post count report by hour and date
 $query = "
     SELECT 
         DATE(created_date) AS post_date, 
